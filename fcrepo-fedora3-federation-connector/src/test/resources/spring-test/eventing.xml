@@ -9,8 +9,6 @@
     <!-- Context that suports event management, including the internal
     event bus (fedoraInternalEventBus) -->
 
-    <context:annotation-config/>
-
     <!-- listener that moves JCR Events to the Fedora internal event bus -->
     <bean class="org.fcrepo.kernel.observer.SimpleObserver"/>
 

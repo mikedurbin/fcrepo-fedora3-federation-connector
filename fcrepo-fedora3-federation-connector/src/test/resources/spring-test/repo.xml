@@ -8,8 +8,6 @@
 
     <!-- Context that supports the actual ModeShape JCR itself -->
 
-    <context:annotation-config/>
-
     <bean name="modeshapeRepofactory"
           class="org.fcrepo.kernel.spring.ModeShapeRepositoryFactoryBean">
       <property name="repositoryConfiguration" value="classpath:/config/repository.json"/>
@@ -19,4 +17,7 @@
 
     <!-- For the time being, load annotation config here too -->
     <bean class="org.fcrepo.metrics.MetricsConfig"/>
+
+    <context:component-scan base-package="org.fcrepo.kernel.services, org.fcrepo.http, org.fcrepo.serialization"/>
+
 </beans>

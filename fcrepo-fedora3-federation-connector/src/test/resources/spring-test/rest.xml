@@ -13,8 +13,6 @@
     <!-- Context that houses JAX-RS Resources that compose the API
         as well as some utility gear. -->
 
-    <context:annotation-config/>
-
     <!-- Mints PIDs-->
     <bean class="org.fcrepo.kernel.identifiers.UUIDPathMinter">
       <constructor-arg type="int" index="0" value="${fcrepo.uuid.path.length:2}" />
@@ -22,8 +20,5 @@
     </bean>
 
     <bean class="org.fcrepo.http.commons.session.SessionFactory"/>
-    
-
-    <context:component-scan base-package="org.fcrepo.kernel.services, org.fcrepo.http, org.fcrepo.serialization"/>
 
 </beans>

@@ -128,7 +128,7 @@ public class Fedora3FederationConnector extends ReadOnlyConnector
             FedoraObjectRecord o = f3.getObjectByPid(id.getPid());
             writer.setPrimaryType(JcrConstants.NT_FOLDER);
             writer.setParent(ID.ROOT_ID.getId());
-            writer.addMixinType(FEDORA_OBJECT);
+            //writer.addMixinType(FEDORA_OBJECT);
             if (o.getModificationDate() != null) {
                 writer.addProperty(JCR_LASTMODIFIED,
                         factories().getDateFactory().create(
@@ -145,7 +145,7 @@ public class Fedora3FederationConnector extends ReadOnlyConnector
             // return a datastream node
             writer.setPrimaryType(JcrConstants.NT_FILE);
             writer.setParent(id.getParentId());
-            writer.addMixinType(FEDORA_DATASTREAM);
+            //writer.addMixinType(FEDORA_DATASTREAM);
             FedoraDatastreamRecord ds
                 = f3.getDatastream(id.getPid(), id.getDSID());
             if (ds.getModificationDate() != null) {
@@ -167,7 +167,7 @@ public class Fedora3FederationConnector extends ReadOnlyConnector
                     id.getDSID());
             writer.setPrimaryType(JcrConstants.NT_RESOURCE);
             writer.setParent(id.getParentId());
-            writer.addMixinType(FEDORA_BINARY);
+            //writer.addMixinType(FEDORA_BINARY);
             try {
                 BinaryValue binary = new Fedora3DatastreamBinaryValue(ds);
                 writer.addProperty(JcrConstants.JCR_DATA, binary);
